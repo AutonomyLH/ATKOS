@@ -1,0 +1,44 @@
+﻿<Window x:Name="windowMain" x:Class="Final_Project.LevelUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_Project"
+        mc:Ignorable="d"
+        Title="ATKOS - Level Up" Height="374" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" BorderBrush="#FF2D7C00" Background="White" WindowStyle="None">
+    <Grid x:Name="mainGrid" Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="87*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textConstitution" HorizontalAlignment="Left" Margin="13,10,0,0" TextWrapping="Wrap" Text="Constitution" VerticalAlignment="Top" Width="98" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textStrength" HorizontalAlignment="Left" Margin="9.111,40,0,0" TextWrapping="Wrap" Text="Strength" VerticalAlignment="Top" Width="69" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <TextBlock x:Name="textAgility" HorizontalAlignment="Left" Margin="26.111,70,0,0" TextWrapping="Wrap" Text="Agility" VerticalAlignment="Top" Width="52" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <TextBlock x:Name="textIntelligence" HorizontalAlignment="Left" Margin="18,100,0,0" TextWrapping="Wrap" Text="Intelligence" VerticalAlignment="Top" Width="93" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textDefense" HorizontalAlignment="Left" Margin="11.111,130,0,0" TextWrapping="Wrap" Text="Defense " VerticalAlignment="Top" Width="67" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <TextBlock x:Name="textCharisma" HorizontalAlignment="Left" Margin="1.111,160,0,0" TextWrapping="Wrap" Text="Charisma" VerticalAlignment="Top" Width="77" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <TextBlock x:Name="textInfo" HorizontalAlignment="Center" Margin="13,206,10,90" TextWrapping="Wrap" Width="271" Foreground="#FF2D7C00" TextAlignment="Center" Grid.ColumnSpan="2"><Run Text="You are now level ${level}!"/><LineBreak/><Run Text="Allocate your stat points!"/></TextBlock>
+        <TextBlock x:Name="textRemaining" HorizontalAlignment="Left" Margin="13,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36" Width="128" Foreground="#FF2D7C00" FontSize="9" FontStyle="Italic" TextAlignment="Center" Grid.ColumnSpan="2"><Run Text="Points Remaining: ${pRe"/><Run Text="m}"/></TextBlock>
+        <TextBlock x:Name="textSpent" HorizontalAlignment="Left" Margin="105.111,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="146" Foreground="#FF2D7C00" FontSize="9" FontStyle="Italic" TextAlignment="Center" Grid.Column="1"><Run Text="Points Spent: ${pSpent}"/></TextBlock>
+        <Button x:Name="buttonAccept" Content="Accept" Margin="58.111,286,91,26" VerticalAlignment="Center" Click="buttonAccept_Click" Height="34" Grid.Column="1"/>
+        <Label x:Name="conDisplay" HorizontalAlignment="Left" Margin="105.111,10,0,0" Content="0" VerticalAlignment="Top" Width="49" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <Label x:Name="strDisplay" HorizontalAlignment="Left" Margin="105.111,40,0,0" Content="0" VerticalAlignment="Top" Width="49" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <Label x:Name="agiDisplay" HorizontalAlignment="Left" Margin="105.111,70,0,0" Content="0" VerticalAlignment="Top" Width="49" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <Label x:Name="intDisplay" HorizontalAlignment="Left" Margin="105.111,100,0,0" Content="0" VerticalAlignment="Top" Width="49" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <Label x:Name="defDisplay" HorizontalAlignment="Left" Margin="105.111,130,0,0" Content="0" VerticalAlignment="Top" Width="49" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <Label x:Name="chaDisplay" HorizontalAlignment="Left" Margin="105.111,160,0,0" Content="0" VerticalAlignment="Top" Width="49" Foreground="#FF2D7C00" Height="30" FontSize="18" Grid.Column="1"/>
+        <Button x:Name="buttonConPlus" Content="+" HorizontalAlignment="Left" Margin="78.111,10,0,0" VerticalAlignment="Top" Width="17" Height="16" Padding="0" RenderTransformOrigin="-2.708,0.458" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="buttonConPlus_Click" Grid.Column="1"/>
+        <Button x:Name="buttonConMin" Content="-" HorizontalAlignment="Left" Margin="78.111,26,0,0" VerticalAlignment="Top" Width="17" Height="14" Padding="0" RenderTransformOrigin="3.042,0.593" Click="buttonConMin_Click" Grid.Column="1"/>
+        <Button x:Name="buttonStrPlus" Content="+" HorizontalAlignment="Left" Margin="78.111,40,0,0" VerticalAlignment="Top" Width="17" Height="16" Padding="0" RenderTransformOrigin="-2.708,0.458" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="buttonStrPlus_Click" Grid.Column="1"/>
+        <Button x:Name="buttonStrMin" Content="-" HorizontalAlignment="Left" Margin="78.111,56,0,0" VerticalAlignment="Top" Width="17" Height="14" Padding="0" RenderTransformOrigin="3.042,0.593" Click="buttonStrMin_Click" Grid.Column="1"/>
+        <Button x:Name="buttonAgiPlus" Content="+" HorizontalAlignment="Left" Margin="78.111,70,0,0" VerticalAlignment="Top" Width="17" Height="16" Padding="0" RenderTransformOrigin="-2.708,0.458" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="buttonAgiPlus_Click" Grid.Column="1"/>
+        <Button x:Name="buttonAgiMin" Content="-" HorizontalAlignment="Left" Margin="78.111,86,0,0" VerticalAlignment="Top" Width="17" Height="14" Padding="0" RenderTransformOrigin="3.042,0.593" Click="buttonAgiMin_Click" Grid.Column="1"/>
+        <Button x:Name="buttonIntPlus" Content="+" HorizontalAlignment="Left" Margin="78.111,100,0,0" VerticalAlignment="Top" Width="17" Height="16" Padding="0" RenderTransformOrigin="-2.708,0.458" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+        <Button x:Name="buttonIntPlus1" Content="+" HorizontalAlignment="Left" Margin="78.111,100,0,0" VerticalAlignment="Top" Width="17" Height="16" Padding="0" RenderTransformOrigin="-2.708,0.458" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="buttonIntPlus_Click" Grid.Column="1"/>
+        <Button x:Name="buttonIntMin" Content="-" HorizontalAlignment="Left" Margin="78.111,116,0,0" VerticalAlignment="Top" Width="17" Height="14" Padding="0" RenderTransformOrigin="3.042,0.593" Click="buttonIntMin_Click" Grid.Column="1"/>
+        <Button x:Name="buttonDefMax" Content="+" HorizontalAlignment="Left" Margin="78.111,130,0,0" VerticalAlignment="Top" Width="17" Height="16" Padding="0" RenderTransformOrigin="-2.708,0.458" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="buttonDefMax_Click" Grid.Column="1"/>
+        <Button x:Name="buttonDefMin" Content="-" HorizontalAlignment="Left" Margin="78.111,146,0,0" VerticalAlignment="Top" Width="17" Height="14" Padding="0" RenderTransformOrigin="3.042,0.593" Click="buttonDefMin_Click" Grid.Column="1"/>
+        <Button x:Name="buttonChaPlus" Content="+" HorizontalAlignment="Left" Margin="78.111,160,0,0" VerticalAlignment="Top" Width="17" Height="16" Padding="0" RenderTransformOrigin="-2.708,0.458" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="buttonChaPlus_Click" Grid.Column="1"/>
+        <Button x:Name="buttonChaMin" Content="-" HorizontalAlignment="Left" Margin="78.111,176,0,0" VerticalAlignment="Top" Width="17" Height="14" Padding="0" RenderTransformOrigin="3.042,0.593" Click="buttonChaMin_Click" Grid.Column="1"/>
+    </Grid>
+</Window>

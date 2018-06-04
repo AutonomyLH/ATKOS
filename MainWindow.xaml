@@ -1,0 +1,48 @@
+﻿<Window x:Name="mainWindow" x:Class="Final_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final_Project"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="673.329" Width="852.729" ResizeMode="NoResize" PreviewKeyDown="MainWindow_PreviewKeyDown" PreviewKeyUp="MainWindow_PreviewKeyUp">
+    <Grid x:Name="mainScreen" Background="#FF131313" MouseDown="mainScreen_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="377"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="53"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="canvasDisplay" Background="Black" HorizontalAlignment="Left" Width="450" Height="450" VerticalAlignment="Top" Cursor="Pen">
+            <Image x:Name="character" Height="30" Width="30"/>
+        </Canvas>
+        <Button x:Name="buttonAction" Content="⚪" Margin="351,108,0,0" MaxWidth="30" MaxHeight="30" Height="30" HorizontalAlignment="Left" Width="30" VerticalAlignment="Top" FontSize="18" Click="buttonAction_Click" RenderTransformOrigin="6.643,1.562" Focusable="False" Grid.Row="1" Cursor="ScrollAll"/>
+        <Button x:Name="buttonLeft" Content="←" Margin="316,108,0,0" MaxWidth="30" MaxHeight="30" Height="30" HorizontalAlignment="Left" Width="30" VerticalAlignment="Top" FontSize="18" Click="buttonLeft_Click" Focusable="False" Grid.Row="1" Cursor="ScrollW"/>
+        <Button x:Name="buttonUp" Content="↑" Margin="351,73,0,0" MaxWidth="30" MaxHeight="30" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Click="buttonUp_Click" Focusable="False" Grid.Row="1" Cursor="ScrollN"/>
+        <Button x:Name="buttonRight" Content="→" Margin="386,108,0,0" MaxHeight="30" MaxWidth="30" Height="30" HorizontalAlignment="Left" Width="30" VerticalAlignment="Top" FontSize="18" Click="buttonRight_Click" Focusable="False" Grid.Row="1" Cursor="ScrollE"/>
+        <Button x:Name="buttonDown" Content="↓" Margin="351,143,0,0" MaxWidth="30" MaxHeight="30" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" VerticalContentAlignment="Top" FontSize="18" Click="buttonDown_Click" Focusable="False" Grid.Row="1" Cursor="ScrollS"/>
+        <Button x:Name="buttonBack" Content="Back [Ctrl]" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Width="143" Height="25" Click="buttonBack_Click" Focusable="False" Grid.Row="1" Cursor="Hand"/>
+        <Button x:Name="buttonStart" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="143" Height="25" Click="buttonStart_Click" Focusable="False" MouseUp="buttonStart_MouseUp" MouseDown="buttonStart_MouseDown" Grid.Row="1" Cursor="Hand"/>
+        <Button x:Name="buttonInventory" Content="Inventory [Shift]" HorizontalAlignment="Left" Margin="11,118,0,0" VerticalAlignment="Top" Width="142" Height="25" Focusable="False" Grid.Row="1" Cursor="Hand"/>
+        <Button x:Name="buttonYes" Content="Yes [Y]" HorizontalAlignment="Left" Margin="11,40,0,0" VerticalAlignment="Top" Width="58" Height="39" IsEnabled="False" Focusable="False" Grid.Row="1" RenderTransformOrigin="0.638,-0.615" Cursor="Hand"/>
+        <Button x:Name="buttonNo" Content="No [N]" HorizontalAlignment="Left" Margin="95,40,0,0" VerticalAlignment="Top" Width="58" Height="39" IsEnabled="False" Focusable="False" Grid.Row="1" Cursor="Hand"/>
+        <TextBox x:Name="actionOutput" Grid.Column="2" HorizontalAlignment="Left" Height="445" TextWrapping="Wrap" VerticalAlignment="Top" Width="377" Background="Black" IsReadOnly="True" HorizontalScrollBarVisibility="Auto" Grid.RowSpan="2" Cursor="Arrow" Foreground="#FF2D7C00" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Bottom" Margin="0,116,0,0" ScrollViewer.CanContentScroll="True"/>
+        <TextBox x:Name="actionInput" Grid.Column="2" HorizontalAlignment="Left" Height="26" Margin="0,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" Background="Black" VerticalScrollBarVisibility="Disabled" TextChanged="actionInput_TextChanged" Grid.Row="1" Cursor="IBeam" Foreground="#FF2D7C00"/>
+        <ProgressBar x:Name="barHealth" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" VerticalAlignment="Top" Width="106" Foreground="#FFD40909" Value="100" Background="Black" BorderBrush="White" Grid.Column="2"/>
+        <ProgressBar x:Name="barStamina" HorizontalAlignment="Left" Height="20" Margin="10,35,0,0" VerticalAlignment="Top" Width="106" Foreground="#FF26CD15" Value="100" SmallChange="0" Background="Black" BorderBrush="White" Grid.Column="2"/>
+        <ProgressBar x:Name="barMagic" HorizontalAlignment="Left" Height="20" Margin="199,10,0,0" VerticalAlignment="Top" Width="106" Foreground="#FF2615CD" Value="100" SmallChange="0" Background="Black" BorderBrush="White" Grid.Column="2"/>
+        <ProgressBar x:Name="barExperience" HorizontalAlignment="Left" Height="20" Margin="199,35,0,0" VerticalAlignment="Top" Width="106" Foreground="#FFD64C23" Value="100" SmallChange="0" Background="Black" BorderBrush="White" Grid.Column="2"/>
+        <TextBlock x:Name="textHealth" Grid.Column="2" HorizontalAlignment="Left" Margin="121,10,0,0" TextWrapping="Wrap" Text="Health" VerticalAlignment="Top" Height="20" Width="73" Foreground="#FF2D7C00"/>
+        <TextBlock x:Name="textStamina" Grid.Column="2" HorizontalAlignment="Left" Margin="121,35,0,0" TextWrapping="Wrap" Text="Stamina" VerticalAlignment="Top" Height="20" Width="73" Foreground="#FF2D7C00"/>
+        <TextBlock x:Name="textHealth_Copy" Grid.Column="2" HorizontalAlignment="Left" Margin="310,10,0,0" TextWrapping="Wrap" Text="Magic" VerticalAlignment="Top" Height="20" Width="73" Foreground="#FF2D7C00" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textHealth_Copy1" Grid.Column="2" HorizontalAlignment="Left" Margin="310,35,0,0" TextWrapping="Wrap" Text="Experience" VerticalAlignment="Top" Height="20" Width="73" Foreground="#FF2D7C00" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="characterInfo" Grid.Column="2" HorizontalAlignment="Left" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="377" Foreground="#FF2D7C00" Background="Black"><Run Text="${name}: A level ${level} ${class}."/><LineBreak/><Run Text="Inventory Capacity: ${currentweight}/${maxweight}"/><LineBreak/><Run Text="Location ($(X), $(Y)): ${area name}, ${area type}"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="buttonWait" Content="Wait [.]" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="143" Height="25" Click="buttonWait_Click" Focusable="False" MouseUp="buttonStart_MouseUp" MouseDown="buttonStart_MouseDown" Grid.Row="1" Cursor="Hand"/>
+    </Grid>
+</Window>
