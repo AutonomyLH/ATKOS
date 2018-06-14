@@ -407,7 +407,7 @@ namespace Final_Project
         // Add item to inventory
         private void AddToInventory(Item item)
         {
-
+            // Add functionality for checking if an item has been added, and if so, add another to the stack without going over max inventory space or max stack size
         }
 
         // Control Restraints
